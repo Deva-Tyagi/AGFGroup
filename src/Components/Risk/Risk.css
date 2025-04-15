@@ -1,0 +1,40 @@
+/* Risk Section */
+.risk-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .risk-item {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  
+  .risk-icon {
+    height: 60px;
+    width: 60px;
+    background-color: #e0e0e0; /* Placeholder for icon */
+    margin: 0 auto 20px;
+    border-radius: 50%;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .risk-items {
+      flex-direction: column;
+    }
+    
+    .risk-item {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .risk-item {
+      padding: 20px;
+    }
+  }

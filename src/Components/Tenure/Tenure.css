@@ -1,0 +1,260 @@
+/* Tenure Section */
+.tenure-section {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+  color: #2c3e50;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.accent-line {
+  height: 4px;
+  width: 80px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  margin: 0 auto 50px;
+  border-radius: 2px;
+}
+
+/* Tenure Cards */
+.tenure-cards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+.tenure-card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tenure-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.tenure-card.active {
+  border: none;
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+}
+
+.card-header {
+  padding: 15px 0;
+  background-color: #f8f9fa;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.card-body {
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.selection-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+}
+
+.profit-percentage {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 10px 0;
+  line-height: 1.1;
+}
+
+.profit-label {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* Calculator */
+.calculator-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.calculator-container {
+  width: 100%;
+  max-width: 700px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.calculator-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  padding: 20px 0;
+  margin: 0;
+}
+
+.calculator-body {
+  padding: 40px;
+}
+
+.input-group {
+  margin-bottom: 30px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #64748b;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 15px 15px 15px 35px;
+  font-size: 1.2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #2c3e50;
+  background-color: #f8fafc;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.calculator-result {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.total-value {
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.result-label {
+  font-weight: 500;
+  color: #64748b;
+}
+
+.result-value {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.tenure-value {
+  color: #3b82f6;
+}
+
+.total-value .result-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.total-value .result-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .tenure-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .tenure-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .calculator-body {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .profit-percentage {
+    font-size: 3rem;
+  }
+  
+  .calculator-title {
+    font-size: 1.5rem;
+  }
+  
+  .input-wrapper input {
+    font-size: 1rem;
+  }
+  
+  .total-value .result-value {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,209 @@
+/* Profit Plan Section */
+.profit-plan-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.profit-plan-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(0, 102, 126, 0.8), transparent);
+}
+
+.profit-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.profit-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.profit-title {
+  color: #00667e;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.underline-decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 4px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.underline-decoration::before {
+  content: '';
+  height: 2px;
+  width: 100%;
+  background-color: #ffa726;
+  position: absolute;
+}
+
+.diamond {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #ffa726;
+  transform: rotate(45deg);
+  position: relative;
+  z-index: 1;
+}
+
+.profit-description {
+  text-align: center;
+  color: #4e5c66;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.investment-cards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.investment-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.investment-card.delay {
+  animation-delay: 0.3s;
+}
+
+.investment-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background: linear-gradient(135deg, #00667e 0%, #004e62 100%);
+  color: white;
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 15px 15px 0 0;
+}
+
+.card-header h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.card-content {
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.amount {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #00667e;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.glowing-border {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  width: 70%;
+  background: linear-gradient(90deg, transparent, #ffa726, transparent);
+  opacity: 0.7;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.investment-card:hover .glowing-border {
+  width: 90%;
+  opacity: 1;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .profit-plan-section {
+    padding: 80px 0;
+  }
+  
+  .profit-title {
+    font-size: 2.3rem;
+  }
+  
+  .investment-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .investment-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profit-plan-section {
+    padding: 60px 0;
+  }
+  
+  .profit-title {
+    font-size: 2rem;
+  }
+  
+  .profit-description {
+    font-size: 1rem;
+  }
+  
+  .amount {
+    font-size: 2.2rem;
+  }
+  
+  .invest-button {
+    padding: 12px 28px;
+  }
+}
