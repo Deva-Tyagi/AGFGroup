@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import agfLogo from '../Images/agfLogo.jpg'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +31,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <a href="#home" onClick={() => scrollToSection('home')}>AGF Group</a>
+          <a href="#home" onClick={() => scrollToSection('home')}><img src={agfLogo} /></a>
         </div>
         
         <div className="mobile-menu-icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -48,6 +49,7 @@ const Navbar = () => {
           <li><a href="#benefits" onClick={() => scrollToSection('benefits')}>Benefits</a></li>
           {/* <li><a href="#process" onClick={() => scrollToSection('process')}>Process</a></li> */}
           <li><a href="#projects" onClick={() => scrollToSection('projects')}>Projects</a></li>
+          <li><a href="#under-planning" onClick={() => scrollToSection('under-planning')}>Under-Planning</a></li>
           <li><a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a></li>
         </ul>
       </div>

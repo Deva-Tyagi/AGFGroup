@@ -38,7 +38,7 @@
 /* Properties Grid */
 .properties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 30px;
 }
 
@@ -204,6 +204,7 @@
 
 .modal-close-button:hover {
   background-color: white;
+  color: black;
 }
 
 .modal-content {
@@ -349,6 +350,8 @@
 .contact-agent-button:hover {
   background-color: #003d7a;
 }
+
+
 
 /* Responsive Styles */
 @media (max-width: 1200px) {

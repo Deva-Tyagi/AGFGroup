@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import aboutImg from '../Images/aboutus1.jpeg'
 
 const About = ({ id }) => {
   return (
@@ -8,14 +9,19 @@ const About = ({ id }) => {
         <h2>About AGF Group</h2>
         <div className="about-content">
           <div className="about-text">
-            <p>AGF Group is a reputed real estate development company with over 8 years of experience in the real estate market, primarily in Noida, Uttarakhand, and Himachal Pradesh. We're now expanding our operations into Goa and Punjab, further solidifying our footprint in the Indian real estate market.</p>
+            <p>AGF Group is a trusted and time-tested name in the Indian real estate landscape, backed by a legacy of 15+ years. We have consistently delivered excellence across a diverse portfolio of projects—ranging from scenic holiday retreats in the hills to high-potential urban developments in thriving cityscapes.
+<br />
+<br />
+            Our expertise lies in crafting both residential and investment spaces that perfectly blend luxury, legal transparency, and strategic location. Every project we undertake reflects our commitment to quality, thoughtful design, and long-term value.
+<br />
+<br />
+            With a strong presence in Noida, Uttarakhand, Himachal Pradesh, Goa, and Punjab, AGF Group continues to shape vibrant communities and create opportunities for secure, future-ready investments. We don’t just build properties—we create experiences that elevate lifestyles and grow legacies.</p>
           </div>
           <div className="about-image">
-            {/* Company image placeholder */}
+            <img src={aboutImg} />
           </div>
         </div>
         <div className="timeline">
-          {/* Timeline elements would go here */}
         </div>
       </div>
     </section>

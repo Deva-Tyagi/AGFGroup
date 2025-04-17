@@ -8,7 +8,6 @@ const Contact = ({ id }) => {
     name: '',
     email: '',
     phone: '',
-    investment: '₹1 Crore - ₹5 Crores',
     message: ''
   });
 
@@ -17,10 +16,8 @@ const Contact = ({ id }) => {
     email: false, 
     phone: false,
     message: false,
-    investment: false
   });
 
-  // Added loading and status states for form submission
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
@@ -31,7 +28,6 @@ const Contact = ({ id }) => {
       [name]: value
     }));
     
-    // For select field, trigger focus effect when a value is selected
     if (name === 'investment') {
       setFocused(prev => ({
         ...prev,
@@ -61,21 +57,18 @@ const Contact = ({ id }) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
     
-    // Replace these with your actual EmailJS service ID, template ID, and public key
-    const serviceId = 'YOUR_SERVICE_ID';
-    const templateId = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
+    const serviceId = 'service_k9ab8bk';
+    const templateId = 'template_63kra9e';
+    const publicKey = '-UzTIlfx2uPhW3BV0';
     
     emailjs.sendForm(serviceId, templateId, form.current, publicKey)
-      .then((result) => {
-        console.log('Email sent successfully:', result.text);
+      .then(() => {
         setSubmitStatus('success');
-        // Reset form after successful submission
+
         setFormData({
           name: '',
           email: '',
           phone: '',
-          investment: '₹1 Crore - ₹5 Crores',
           message: ''
         });
         setFocused({
@@ -83,7 +76,6 @@ const Contact = ({ id }) => {
           email: false,
           phone: false,
           message: false,
-          investment: false
         });
       })
       .catch((error) => {
@@ -97,7 +89,7 @@ const Contact = ({ id }) => {
 
   return (
     <section id={id} className="contact-section">
-      <div className="contact-overlay"></div>
+      <div className="contact-overlay"></div> 
       <div className="contact-container">
         <div className="contact-header">
           <h2>Ready to Invest?</h2>
@@ -115,7 +107,7 @@ const Contact = ({ id }) => {
           <div className="contact-form-container">
             <h3>Contact Us</h3>
             {submitStatus === 'success' && (
-              <div className="submission-message success">
+                <div className="submission-message success">
                 Your message has been sent successfully. We'll get back to you soon!
               </div>
             )}
@@ -208,7 +200,7 @@ const Contact = ({ id }) => {
               </div>
               <div className="info-text">
                 <h4>Phone</h4>
-                <p>[Phone Number]</p>
+                <p>+91-9599727060, +91-7042156182</p>
               </div>
             </div>
             
@@ -225,7 +217,7 @@ const Contact = ({ id }) => {
               </div>
             </div>
             
-            <div className="info-item fadeIn delay-2">
+            {/* <div className="info-item fadeIn delay-2">
               <div className="info-icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -237,7 +229,7 @@ const Contact = ({ id }) => {
                 <h4>Website</h4>
                 <p>[Website URL]</p>
               </div>
-            </div>
+            </div> */}
             
             <div className="social-links">
             <a href="https://www.facebook.com/profile.php?id=61574187562137" className="social-link" aria-label="Facebook">

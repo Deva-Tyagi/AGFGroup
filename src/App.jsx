@@ -6,13 +6,14 @@ import Banner from './Components/Banner/Banner';
 import About from './Components/About/About';
 // import ProfitPlan from './Components/ProfitPlan/ProfitPlan';
 // import Tenure from './Components/Tenure/Tenure';
-import Security from './Components/Security/Security';
+// import Security from './Components/Security/Security';
 import Benefits from './Components/Benefits/Benefits';
 // import Process from './Components/Process/Process';
 import Projects from './Components/Projects/Projects';
 import Risk from './Components/Risk/Risk';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
+import UnderPlanning from './Components/UnderPlanning/UnderPlanning';
 
 const App = () => {
   return (
@@ -22,10 +23,11 @@ const App = () => {
       <About id="about" />
       {/* <ProfitPlan id="profit-plan" /> */}
       {/* <Tenure id="investment" /> */}
-      <Security id="security" />
+      {/* <Security id="security" /> */}
       <Benefits id="benefits" />
       {/* <Process id="process" /> */}
       <Projects id="projects" />
+      <UnderPlanning id="under-planning" />
       <Risk id="risk" />
       <Contact id="contact" />
       <Footer />

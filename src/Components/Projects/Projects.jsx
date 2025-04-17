@@ -1,77 +1,82 @@
 import React, { useState } from 'react';
 import './Projects.css';
+import majestic from '../Images/amodasari.jpg'
+import smr from '../Images/smrgreenwood.jpg'
+import empire from '../Images/empire.jpg'
+import emerald from '../Images/emerlad.jpg'
+import amodasari from '../Images/amodasarii.jpeg'
 
 const Projects = ({ id }) => {
-  // Sample real estate properties data
+ 
   const [properties, setProperties] = useState([
     {
       id: 1,
-      title: "Luxury Waterfront Villa",
-      location: "Miami Beach, FL",
-      description: "5 bed, 4 bath modern villa with panoramic ocean views",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIg67ppTVP1Zt6tIikFl-as56RhrWoDx_nMg&s",
-      price: "$1,250,000",
+      title: "Majestic Villas & Farms",
+      location: "Solra, Haryana; ",
+      description: "30-acre estate of freehold luxury plots; Ideal for weekend homes or ROI-focused investments, 3KM Jewar Airport, Direct connect with Yamuna Expressway & Delhi Bombay Expressway ",
+      image: majestic,
+      price: "Immediate registry  available",
       // Additional details for popup
-      size: "4,200 sq ft",
+      size: "1008 sq. yards",
       yearBuilt: "2018",
-      amenities: ["Private Pool", "Home Theater", "Smart Home System", "Yacht Dock", "Wine Cellar"],
-      agent: "Sarah Johnson",
-      agentPhone: "(305) 555-7890",
-      features: "Floor-to-ceiling windows, Italian marble flooring, custom chef's kitchen with top-of-the-line appliances, spa-like master bathroom, and a private elevator.",
-      propertyType: "Single Family Home",
-      parkingSpaces: "3-car garage"
+      amenities: ["Park, Wide Roads, Children Play Zone, Nearby Proposed Hospital, Entertainment Hub"],
+      propertyType: "Villa Plots ",
     },
     {
       id: 2,
-      title: "Downtown Penthouse",
-      location: "Chicago, IL",
-      description: "3 bed, 2 bath penthouse with rooftop terrace",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKOlda9eae1X-mAXSwTNnTi9YrCYfbxSJ4_w&s",
-      price: "$895,000",
+      title: "SMR GREENWOOD",
+      location: "Solra, Haryana; ",
+      description: "25-acre estate of luxury plots in gated community; Ideal for weekend homes or ROI-focused investments, 3KM Jewar Airport, Direct connect with Yamuna Expressway & Delhi Bombay Expressway ",
+      image: smr,
+      price: "Immediate registry available",
       // Additional details for popup
-      size: "2,800 sq ft",
-      yearBuilt: "2020",
-      amenities: ["Rooftop Terrace", "Fitness Center", "24/7 Concierge", "Pet Spa", "Wine Storage"],
-      agent: "Michael Chen",
-      agentPhone: "(312) 555-4321",
-      features: "Floor-to-ceiling windows with panoramic city views, hardwood floors, gourmet kitchen with waterfall island, smart home technology, and custom built-ins.",
-      propertyType: "Condominium",
-      parkingSpaces: "2 dedicated spaces"
+      size: "100 and 200 sq. yard plots",
+      yearBuilt: "2019",
+      amenities: ["Park, 40ft Wide Roads, Children Play Zone, Nearby Proposed Hospital, Entertainment Hub"],
+      propertyType: "Villa Plots ",
+
     },
     {
       id: 3,
-      title: "Suburban Family Home",
-      location: "Austin, TX",
-      description: "4 bed, 3 bath newly renovated home with large backyard",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4d1CcwWsUnuRC0ulccJY3QzoZWkoi8ADHiA&s",
-      price: "$675,000",
+      title: "Royal Empire",
+      location: "Solra, Haryana; ",
+      description: "3-acre estate of luxury plots in gated community; The township is designed for safety, boasting CCTV surveillance and a guarded entrance. Residents will benefit from wide internal roads of 25 ft. and a 30 ft. main project road, facilitating easy access throughout the community. With government electricity provided, Royal Empire offers a perfect blend of modern living and prime location, making it an ideal investment opportunity in a rapidly growing area.",
+      image: empire,
+      price: "Immediate registry available",
       // Additional details for popup
-      size: "3,100 sq ft",
-      yearBuilt: "2015 (Renovated 2023)",
-      amenities: ["Covered Patio", "Fire Pit", "Home Office", "Smart Sprinkler System", "Security System"],
-      agent: "David Martinez",
-      agentPhone: "(512) 555-6789",
-      features: "Open floor plan, chef's kitchen with quartz countertops, luxury vinyl plank flooring, updated bathrooms, and energy-efficient windows and HVAC system.",
-      propertyType: "Single Family Home",
-      parkingSpaces: "2-car garage"
+      size: " 111 sq. yards onwards",
+      yearBuilt: "2021",
+      amenities: ["Park, Children Play Zone, Nearby Proposed Hospital, Entertainment Hub"],
+      propertyType: "Villa Plots ",
+
     },
     {
       id: 4,
-      title: "Mountain Retreat",
-      location: "Aspen, CO",
-      description: "3 bed, 2 bath cabin with stunning mountain views",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHUSeTPvFiCdg4y7SEqYTdVuCbzcOVB1DmDQ&s",
-      price: "$525,000",
+      title: "Emerald Estate",
+      location: "Solra, Haryana; ",
+      description: "Each plot will come with a boundary wall and security gate for added privacy and security. The project boasts a 30 ft. wide main road and 25 ft. wide external roads, ensuring smooth connectivity throughout the enclave. Additionally, residents will benefit from government electricity, further enhancing the convenience and quality of living in this prime location near the airport.",
+      image: emerald,
+      price: "Immediate registry available",
       // Additional details for popup
-      size: "1,950 sq ft",
-      yearBuilt: "2010",
-      amenities: ["Wood-burning Fireplace", "Hot Tub", "Outdoor Kitchen", "Hiking Trails Access", "Ski Storage"],
-      agent: "Emily Wilson",
-      agentPhone: "(970) 555-2468",
-      features: "Exposed beam ceilings, floor-to-ceiling stone fireplace, wraparound deck with mountain views, hardwood floors, and a gourmet kitchen with granite countertops.",
-      propertyType: "Cabin",
-      parkingSpaces: "2-car carport"
-    }
+      size: " sizes starting from 1210 sq. yards,",
+      yearBuilt: "2021",
+      amenities: ["Park, Children Play Zone, Nearby Proposed Hospital, Entertainment Hub"],
+      propertyType: "Villa Plots ",
+    },
+    // {
+    //   id: 5,
+    //   title: "Amoda Sari",
+    //   location: "Petshal, Near Almora; Uttarakhand ",
+    //   description: " AGF proudly presents Amoda Sari, an exclusive villa township located in Petshal, near Almora, Uttarakhand. This exquisite project is designed for those seeking a peaceful retreat amidst nature without compromising on modern comforts. Nestled in the lap of the majestic Himalayas, Amoda Sari offers breathtaking panoramic views, fresh mountain air, and a tranquil environment. Its prime location ensures seamless connectivity to Mukteshwar, Bhimtal, Nainital, and Almora, making it an ideal investment for a holiday home, retirement retreat, or a high-return real estate opportunity. Almora Enclave is an exclusive project located just offering immediate registry, mutation, and possession. Designed for those seeking luxurious and spacious living, the project features legal freehold land with farm sizes starting from 1210 sq. yards, making it perfect for building your dream farmhouse. Each plot comes with a boundary wall and security gate, ensuring privacy and safety for residents.",
+    //   image: amodasari,
+    //   price: "Immediate registry available",
+    //   // Additional details for popup
+    //   size: " sizes starting from 1210 sq. yards,",
+    //   yearBuilt: "2024",
+    //   amenities: ["Park, Children Play Zone, Nearby Proposed Hospital, Entertainment Hub"],
+    //   propertyType: "Villa Plots ",
+
+    // }
   ]);
   
   // State for modal popup
@@ -82,13 +87,13 @@ const Projects = ({ id }) => {
   const openPropertyModal = (property) => {
     setSelectedProperty(property);
     setModalOpen(true);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    document.body.style.overflow = 'hidden'; 
   };
   
   // Close modal function
   const closePropertyModal = () => {
     setModalOpen(false);
-    document.body.style.overflow = 'auto'; // Enable scrolling when modal is closed
+    document.body.style.overflow = 'auto'; 
   };
 
   return (
@@ -209,12 +214,12 @@ const Projects = ({ id }) => {
                   </ul>
                 </div>
                 
-                <div className="modal-agent-info">
+                {/* <div className="modal-agent-info">
                   <h3>Contact Agent</h3>
                   <p className="agent-name">{selectedProperty.agent}</p>
                   <p className="agent-phone">{selectedProperty.agentPhone}</p>
-                  <button className="contact-agent-button">Contact Now</button>
-                </div>
+   
+                </div> */}
               </div>
             </div>
           </div>

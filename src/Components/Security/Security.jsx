@@ -1,5 +1,6 @@
 import React from 'react';
 import './Security.css';
+import processImg from '../Images/security.png'
 
 const Security = ({ id }) => {
   return (
@@ -16,7 +17,7 @@ const Security = ({ id }) => {
           </div>
         </div>
         <div className="process-diagram">
-          {/* Diagram elements would go here */}
+         {/* <img src={processImg} /> */}
         </div>
       </div>
     </section>

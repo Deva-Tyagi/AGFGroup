@@ -1,6 +1,13 @@
 /* Benefits Section */
 .benefits-section{
-  background-color: #ebebeb;
+  background-color: #eeededfc;
+}
+.benefits-section h2{
+  color: black;
+}
+.benefits-section h3{
+  color: black;
+  text-align: start;
 }
 .benefits-grid {
     display: grid;
@@ -25,9 +32,14 @@
   .benefit-icon {
     height: 60px;
     width: 60px;
-    background-color: #e0e0e0; /* Placeholder for icon */
     margin-bottom: 20px;
     border-radius: 50%;
+  }
+  .benefit-icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(110%);
   }
   
   /* Responsive Styles */

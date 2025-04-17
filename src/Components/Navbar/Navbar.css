@@ -10,9 +10,12 @@
   }
   
   .navbar.scrolled {
-    background-color: var(--primary-color);
+    background-color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
+  }
+  .navbar.scrolled .navbar-menu li a{
+    color:#000;
   }
   
   .navbar-container {
@@ -25,11 +28,14 @@
   }
   
   .navbar-logo a {
-    color: white;
+    color: #000;
     font-size: 1.8rem;
     font-weight: 700;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+  }
+  .navbar-logo img{
+    width: 150px;
   }
   
   .navbar-menu {
@@ -96,7 +102,7 @@
       top: 100%;
       left: 0;
       width: 100%;
-      background-color: var(--primary-color);
+      background-color: green;
       flex-direction: column;
       align-items: center;
       padding: 20px 0;
