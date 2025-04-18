@@ -145,7 +145,7 @@ const Projects = ({ id }) => {
     <section id={id} className="properties-section">
       <div className="container">
         <div className="section-header">
-          <h2>NEW LAUNCHES</h2>
+          <h2>DELIVERED PROJECTS</h2>
           <div className="elegant-underline"></div>
         </div>
         

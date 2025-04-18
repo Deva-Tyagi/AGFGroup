@@ -56,7 +56,7 @@ const Banner = ({ id }) => {
       <div className="hero-overlay">
         <h1>AGF Group - Building a Better Tomorrow</h1>
         <h2>Your Gateway to Premier Real Estate Investments</h2>
-        <p>For over 15 years, we've been dedicated to creating exceptional living experiences that blend comfort, style, and functionality.</p>
+        <p>For over 7 years, we've been dedicated to creating exceptional living experiences that blend comfort, style, and functionality.</p>
         <button 
           className="cta-button" 
           onClick={() => setShowForm(true)}
