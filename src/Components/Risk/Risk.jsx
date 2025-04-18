@@ -19,8 +19,8 @@ const Risk = ({ id }) => {
               <div className="risk-icon">
                 <img src={agreement} alt="Legally-Bound Agreements" />
               </div>
-              <h3>Legally-Bound Agreements</h3>
-              <p>All deals are sealed with clear, enforceable MoUs, ensuring legal protection from start to finish.</p>
+              <h3>Legally-Bond Agreements</h3>
+              <p>All deals are sealed with clear, enforceable MoUs, GPA (General Power of Attorney) and PDC (Post Dated Cheuqe) ensuring legal protection from start to finish.</p>
             </div>
             <div className="risk-item">
               <div className="risk-icon">

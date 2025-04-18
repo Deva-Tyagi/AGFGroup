@@ -7,43 +7,39 @@ const UnderPlanning = ({id}) => {
   const projects = [
     {
       id: 1,
-      name: "HEINRICH ESTATE",
+      name: "AVENUE INVESTMENT FLOORS",
       location: "Mashobra, Himachal Pradesh",
-      size: "20 Acres",
-      productMix: "Luxury Cottages, 1 BHK Suites & 2 BHK Apartments",
+      productMix: "Plots & Villas",
       status: "Under Planning",
-      description: "An upcoming residential development nestled in the lush Pine and Deodar forests of Shimla district, Mashobra Hills is located in the middle of a pristine valley featuring unmatched views with a spectacular living environment.",
-      city: "Mashobra"
+      description: "Premium plots and luxury villas nestled in Mashobra's Pine and Deodar forests, offering panoramic valley views and serene mountain living in Shimla district.",
+      city:"Mashobra"
     },
     {
       id: 2,
-      name: "GREEN FARM HOUSES",
-      location: "Chandigarh",
-      size: "30 Acres",
-      productMix: "Luxury Farm House Plots of One Acre & Plus",
+      name: "HIMACHAL MOOD MENTION",
+      location: "Solan, Himachal Pradesh",
+      productMix: "Plots & Villas",
       status: "Under Planning",
-      description: "Green Farm Houses will offer urbanites the opportunity to live in the sprawling home of their dreams in the midst of a pollution free environment.",
-      city: "New Chandigarh"
+      description: "Tranquil plots and farm villas in Solan providing urbanites an escape to pollution-free surroundings with the therapeutic climate of Himachal Pradesh.",
+      city: "Solan"
     },
     {
       id: 3,
-      name: "CROSSWALK",
-      location: "Mohali, Punjab",
-      size: "15 Acres",
-      productMix: "Commercial Spaces & Luxury Apartments",
+      name: "SHREE RADHE GARDEN",
+      location: "Solra, Haryana",
+      productMix: "Plots & Villas",
       status: "Under Planning",
-      description: "A modern mixed-use development with premium commercial spaces and residential units in the heart of Mohali.",
-      city: "Mohali, Punjab"
+      description: "Modern plots and elegant villas in Solra, Haryana combining contemporary design with thoughtful amenities in an emerging location with excellent connectivity.",
+      city: "Solra"
     },
     {
       id: 4,
-      name: "HAMILTON COURT",
-      location: "Mohali, Punjab",
-      size: "25 Acres",
-      productMix: "Premium Villas & Townhouses",
+      name: "MOOD MENTION",
+      location: "Goa",
+      productMix: "Plots & Villas",
       status: "Under Planning",
-      description: "An exclusive gated community featuring premium villas and townhouses with world-class amenities.",
-      city: "Mohali, Punjab"
+      description: "Exclusive gated community in Goa featuring premium plots and villas that capture the essence of tropical paradise with world-class amenities and security.",
+      city: "Goa"
     }
   ];
 
@@ -51,7 +47,7 @@ const UnderPlanning = ({id}) => {
     <div className="under-planning-container" id={id}>
       <div className="under-planning-wrapper">
         <div className="section-header">
-          <h2 className="section-title">UNDER PLANNING</h2>
+          <h2 className="section-title">UPCOMING PROJECTS</h2>
           <div className="section-divider"></div>
         </div>
         
@@ -77,13 +73,13 @@ const UnderPlanning = ({id}) => {
                   </div>
                   
                   <div className="detail-item">
-                    <div className="icon-container">
+                    {/* <div className="icon-container">
                       <Check size={20} color="#ffffff" />
                     </div>
                     <div className="detail-content">
                       <h4 className="detail-label">SIZE</h4>
                       <p className="detail-text">{project.size}</p>
-                    </div>
+                    </div> */}
                   </div>
                   
                   <div className="detail-item">

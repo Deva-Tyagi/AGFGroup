@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Projects.css';
-import majestic from '../Images/amodasari.jpg'
+import majestic from '../Images/majesticvilla.jpg'
 import smr from '../Images/smrgreenwood.jpg'
 import empire from '../Images/empire.jpg'
 import emerald from '../Images/emerlad.jpg'
-import amodasari from '../Images/amodasarii.jpeg'
+import amodasari from '../Images/amodasari1.jpg'
 
 const Projects = ({ id }) => {
  
@@ -63,37 +63,82 @@ const Projects = ({ id }) => {
       amenities: ["Park, Children Play Zone, Nearby Proposed Hospital, Entertainment Hub"],
       propertyType: "Villa Plots ",
     },
-    // {
-    //   id: 5,
-    //   title: "Amoda Sari",
-    //   location: "Petshal, Near Almora; Uttarakhand ",
-    //   description: " AGF proudly presents Amoda Sari, an exclusive villa township located in Petshal, near Almora, Uttarakhand. This exquisite project is designed for those seeking a peaceful retreat amidst nature without compromising on modern comforts. Nestled in the lap of the majestic Himalayas, Amoda Sari offers breathtaking panoramic views, fresh mountain air, and a tranquil environment. Its prime location ensures seamless connectivity to Mukteshwar, Bhimtal, Nainital, and Almora, making it an ideal investment for a holiday home, retirement retreat, or a high-return real estate opportunity. Almora Enclave is an exclusive project located just offering immediate registry, mutation, and possession. Designed for those seeking luxurious and spacious living, the project features legal freehold land with farm sizes starting from 1210 sq. yards, making it perfect for building your dream farmhouse. Each plot comes with a boundary wall and security gate, ensuring privacy and safety for residents.",
-    //   image: amodasari,
-    //   price: "Immediate registry available",
-    //   // Additional details for popup
-    //   size: " sizes starting from 1210 sq. yards,",
-    //   yearBuilt: "2024",
-    //   amenities: ["Park, Children Play Zone, Nearby Proposed Hospital, Entertainment Hub"],
-    //   propertyType: "Villa Plots ",
-
-    // }
+    {
+      id: 5,
+      title: "Amoda Sari",
+      location: "Petshal, Near Almora; Uttarakhand ",
+      description: " AGF proudly presents Amoda Sari, an exclusive villa township located in Petshal, near Almora, Uttarakhand. This exquisite project is designed for those seeking a peaceful retreat amidst nature without compromising on modern comforts. Nestled in the lap of the majestic Himalayas, Amoda Sari offers breathtaking panoramic views, fresh mountain air, and a tranquil environment. Its prime location ensures seamless connectivity to Mukteshwar, Bhimtal, Nainital, and Almora, making it an ideal investment for a holiday home, retirement retreat, or a high-return real estate opportunity. Almora Enclave is an exclusive project located just offering immediate registry, mutation, and possession. Designed for those seeking luxurious and spacious living, the project features legal freehold land with farm sizes starting from 1210 sq. yards, making it perfect for building your dream farmhouse. Each plot comes with a boundary wall and security gate, ensuring privacy and safety for residents.",
+      image: amodasari,
+      price: "Immediate registry available",
+      // Additional details for popup
+      size: " sizes starting from 1210 sq. yards,",
+      yearBuilt: "2024",
+      amenities: ["Park, Children Play Zone, Nearby Proposed Hospital, Entertainment Hub"],
+      propertyType: "Villa Plots ",
+    }
   ]);
   
-  // State for modal popup
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(4);
   
-  // Open modal function
+  const carouselRef = useRef(null);
+  
   const openPropertyModal = (property) => {
     setSelectedProperty(property);
     setModalOpen(true);
     document.body.style.overflow = 'hidden'; 
   };
   
-  // Close modal function
   const closePropertyModal = () => {
     setModalOpen(false);
     document.body.style.overflow = 'auto'; 
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1200) {
+        setCardsToShow(4);
+      } else if (window.innerWidth >= 992) {
+        setCardsToShow(3);
+      } else if (window.innerWidth >= 768) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(1);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex + 1;
+      return nextIndex >= properties.length ? 0 : nextIndex;
+    });
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex - 1;
+      return nextIndex < 0 ? properties.length - 1 : nextIndex;
+    });
+  };
+
+  const getVisibleCards = () => {
+    const visibleCards = [];
+    for (let i = 0; i < cardsToShow; i++) {
+      const index = (currentIndex + i) % properties.length;
+      visibleCards.push(properties[index]);
+    }
+    return visibleCards;
   };
 
   return (
@@ -104,46 +149,74 @@ const Projects = ({ id }) => {
           <div className="elegant-underline"></div>
         </div>
         
-        <div className="properties-grid">
-          {properties.map((property) => (
-            <div key={property.id} className="property-card" onClick={() => openPropertyModal(property)}>
-              <div className="property-image-container">
-                <img src={property.image} alt={property.title} className="property-image" />
-                <div className="overlay">
-                  <div className="overlay-content">
-                    <h3>{property.title}</h3>
-                    <p className="subtitle">{property.location}</p>
+        <div className="carousel-container">
+          <button className="carousel-control prev-button" onClick={prevSlide}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          
+          <div className="carousel-wrapper" ref={carouselRef}>
+            <div className="properties-carousel" style={{ 
+              gridTemplateColumns: `repeat(${cardsToShow}, 1fr)` 
+            }}>
+              {getVisibleCards().map((property) => (
+                <div key={property.id} className="property-card" onClick={() => openPropertyModal(property)}>
+                  <div className="property-image-container">
+                    <img src={property.image} alt={property.title} className="property-image" />
+                    <div className="overlay">
+                      <div className="overlay-content">
+                        <h3>{property.title}</h3>
+                        <p className="subtitle">{property.location}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="property-details">
+                    <h3 className="property-title">{property.title}</h3>
+                    <div className="property-info">
+                      <div className="info-group">
+                        <h4>LOCATION</h4>
+                        <p>{property.location}</p>
+                      </div>
+                      
+                      <div className="info-group">
+                        <h4>SIZE</h4>
+                        <p>{property.size}</p>
+                      </div>
+                      
+                      <div className="info-group">
+                        <h4>PROPERTY TYPE</h4>
+                        <p>{property.propertyType}</p>
+                      </div>
+                      
+                      <div className="info-group">
+                        <h4>STATUS</h4>
+                        <p>AVAILABLE</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <div className="property-details">
-                <h3 className="property-title">{property.title}</h3>
-                <div className="property-info">
-                  <div className="info-group">
-                    <h4>LOCATION</h4>
-                    <p>{property.location}</p>
-                  </div>
-                  
-                  <div className="info-group">
-                    <h4>SIZE</h4>
-                    <p>{property.size}</p>
-                  </div>
-                  
-                  <div className="info-group">
-                    <h4>PROPERTY TYPE</h4>
-                    <p>{property.propertyType}</p>
-                  </div>
-                  
-                  <div className="info-group">
-                    <h4>STATUS</h4>
-                    <p>AVAILABLE</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+          
+          <button className="carousel-control next-button" onClick={nextSlide}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
+        
+        {/* <div className="carousel-indicators">
+          {properties.map((_, index) => (
+            <button 
+              key={index} 
+              className={`carousel-dot ${index >= currentIndex && index < currentIndex + cardsToShow ? 'active' : ''}`}
+              onClick={() => setCurrentIndex(index)}
+            />
+          ))}
+        </div> */}
       </div>
       
       {/* Property Details Modal */}
@@ -213,13 +286,6 @@ const Projects = ({ id }) => {
                     ))}
                   </ul>
                 </div>
-                
-                {/* <div className="modal-agent-info">
-                  <h3>Contact Agent</h3>
-                  <p className="agent-name">{selectedProperty.agent}</p>
-                  <p className="agent-phone">{selectedProperty.agentPhone}</p>
-   
-                </div> */}
               </div>
             </div>
           </div>

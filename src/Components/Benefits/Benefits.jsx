@@ -16,7 +16,7 @@ const Benefits = ({ id }) => {
           <div className="benefit-card">
             <div className="benefit-icon"><img src={provenLogo} /></div>
             <h3>Proven Excellence</h3>
-            <p>15+ years of successful project delivery across prime locations.</p>
+            <p>7+ years of successful project delivery across prime locations.</p>
           </div>
           <div className="benefit-card">
             <div className="benefit-icon"><img src={locationLogo} /></div>
@@ -25,7 +25,7 @@ const Benefits = ({ id }) => {
           </div>
           <div className="benefit-card">
             <div className="benefit-icon"><img src={returnLogo} /></div>
-            <h3>Assured Returns</h3>
+            <h3>Assured Profit</h3>
             <p>Profit-guaranteed investment plans backed by real estate assets.</p>
           </div>
           <div className="benefit-card">

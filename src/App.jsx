@@ -14,6 +14,7 @@ import Risk from './Components/Risk/Risk';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import UnderPlanning from './Components/UnderPlanning/UnderPlanning';
+import ChannelPartner from './Components/ChannelPartner/ChannelPartner';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
       <Projects id="projects" />
       <UnderPlanning id="under-planning" />
       <Risk id="risk" />
+      <ChannelPartner id="become-partner" />
       <Contact id="contact" />
       <Footer />
     </div>

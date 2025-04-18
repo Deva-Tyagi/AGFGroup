@@ -87,9 +87,12 @@
   .mobile-menu-icon span {
     width: 100%;
     height: 3px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     transition: all 0.3s ease;
+  }
+  .navbar.scrolled .mobile-menu-icon span{
+    background-color: #000;
   }
   
   @media (max-width: 992px) {
@@ -102,7 +105,8 @@
       top: 100%;
       left: 0;
       width: 100%;
-      background-color: green;
+      background-color: rgb(255, 255, 255);
+      color: #000;
       flex-direction: column;
       align-items: center;
       padding: 20px 0;
